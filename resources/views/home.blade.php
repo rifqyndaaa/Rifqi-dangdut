@@ -164,93 +164,106 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Form Pertanyaan</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Form Pertanyaan</h5>
 
-                        <form action="{{ route('question.store') }}" method="POST">
-                            @csrf
-                            <div class="mb-3">
-                                <label for="nama" class="form-label">Nama</label>
-                                <input type="text" class="form-control" name="nama">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" name="email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                                <textarea class="form-control" rows="4" name="pertanyaan" ...></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
-                        </form>
-                    </div>
-                </div>
-
-                {{-- Alerts --}}
-                <div class="card ">
-                    <div class="card-body">
-                        <h3 class="h5 mb-3">Alerts</h3>
-                        <div class="alert alert-primary mb-2">Informational alert</div>
-                        <div class="alert alert-success mb-2">Success alert</div>
-                        <div class="alert alert-warning mb-2">Warning alert</div>
-                        <div class="alert alert-danger mb-0">Danger alert</div>
-                    </div>
-                </div>
-
-                {{-- Buttons --}}
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="h5 mb-3">Buttons</h3>
-                        <div class="d-flex flex-wrap gap-2">
-                            <button class="btn btn-primary">Primary</button>
-                            <button class="btn btn-secondary">Secondary</button>
-                            <button class="btn btn-outline-primary">Outline</button>
-                            <button class="btn btn-success">Success</button>
-                            <button class="btn btn-danger">Danger</button>
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                            
+                            <form action="{{ route('question.store') }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="nama" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" name="nama">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" class="form-control" name="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                                    <textarea class="form-control" rows="4" name="pertanyaan" ...></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                            </form>
                         </div>
                     </div>
-                </div>
 
-                {{-- Table --}}
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="h5 mb-3">Table</h3>
-                        <div class="table-responsive">
-                            <table class="table align-middle">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Name</th>
-                                        <th>Role</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Ani</td>
-                                        <td>Admin</td>
-                                        <td><span class="badge text-bg-success">Active</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Budi</td>
-                                        <td>User</td>
-                                        <td><span class="badge text-bg-secondary">Inactive</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Cici</td>
-                                        <td>Editor</td>
-                                        <td><span class="badge text-bg-warning">Pending</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    {{-- Alerts --}}
+                    <div class="card ">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3">Alerts</h3>
+                            <div class="alert alert-primary mb-2">Informational alert</div>
+                            <div class="alert alert-success mb-2">Success alert</div>
+                            <div class="alert alert-warning mb-2">Warning alert</div>
+                            <div class="alert alert-danger mb-0">Danger alert</div>
                         </div>
-                        <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau
-                            <code>.table-bordered</code> sesuai kebutuhan.</p>
+                    </div>
+
+                    {{-- Buttons --}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3">Buttons</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-primary">Primary</button>
+                                <button class="btn btn-secondary">Secondary</button>
+                                <button class="btn btn-outline-primary">Outline</button>
+                                <button class="btn btn-success">Success</button>
+                                <button class="btn btn-danger">Danger</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Table --}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3">Table</h3>
+                            <div class="table-responsive">
+                                <table class="table align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ani</td>
+                                            <td>Admin</td>
+                                            <td><span class="badge text-bg-success">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Budi</td>
+                                            <td>User</td>
+                                            <td><span class="badge text-bg-secondary">Inactive</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Cici</td>
+                                            <td>Editor</td>
+                                            <td><span class="badge text-bg-warning">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau
+                                <code>.table-bordered</code> sesuai kebutuhan.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Footer -->
