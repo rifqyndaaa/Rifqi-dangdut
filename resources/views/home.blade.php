@@ -34,7 +34,7 @@
 
         .card {
             margin-top: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.1);
         }
 
         .footer {
@@ -83,14 +83,14 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1>{{ $username }}</h1>
-            <p>{{ $last_login }}</p>
+            <h1> {{ $username }} </h1>
+            <p> {{ $last_login }} </p>
             <p class="lead mb-0">A simple and elegant app using Bootstrap 5 and Laravel Blade.</p>
         </div>
     </section>
 
     <!-- Content Section -->
-    <section id="content" class="container">
+    <section id="content" class="container ">
         <div class="row">
             <div class="col-md-6">
                 {{-- About --}}
@@ -160,8 +160,32 @@
             </div>
 
             <div class="col-md-6">
-                {{-- Alerts --}}
+
                 <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Form Pertanyaan</h5>
+
+                        <form action="{{ route('question.store') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama</label>
+                                <input type="text" class="form-control" name="nama">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                                <textarea class="form-control" rows="4" name="pertanyaan" ...></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                        </form>
+                    </div>
+                </div>
+
+                {{-- Alerts --}}
+                <div class="card ">
                     <div class="card-body">
                         <h3 class="h5 mb-3">Alerts</h3>
                         <div class="alert alert-primary mb-2">Informational alert</div>
@@ -218,4 +242,26 @@
                                         <td>Editor</td>
                                         <td><span class="badge text-bg-warning">Pending</span></td>
                                     </tr>
-                                </tbody
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau
+                            <code>.table-bordered</code> sesuai kebutuhan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; {{ date('Y') }} My Laravel App. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
