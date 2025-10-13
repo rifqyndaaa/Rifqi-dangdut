@@ -383,101 +383,118 @@
             <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/components/forms/" class="btn btn-outline-primary"><i class="fas fa-arrow-left me-1"></i> Kembali</a>
         </div>
     </div>
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+        <div class="mb-3 mb-lg-0">
+            <h1 class="h4">Forms</h1>
+            <p class="mb-0">form untuk menambah pelanggan baru</p>
+        </div>
+        <div>
+            <a href="#" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> kembali</a>
+        </div>
+    </div>
 
-    <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <div class="card border-0 shadow components-section">
-                <div class="card-body">
-                    <form>
-                        <div class="row mb-3">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <label for="first_name" class="form-label">Nama Depan (*)</label>
-                                <input type="text" class="form-control" id="first_name" name="first_name" maxlength="100" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="last_name" class="form-label">Nama Belakang</label>
-                                <input type="text" class="form-control" id="last_name" name="last_name" maxlength="100">
-                            </div>
+    <div class="card border-0 shadow-sm p-4">
+        <div class="card-body">
+
+            <form action="{{ route('pelanggan.store') }}" method="POST">
+                @csrf
+
+                <div class="row mb-4">
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label for="first_name" class="form-label">First name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="first_name"
+                            name="first_name"
+                            value="{{ old('first_name') }}"
+                            required
+                        >
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label for="birthday" class="form-label">Birthday</label>
+                        <div class="input-group">
+                            <input
+                                type="date"
+                                class="form-control"
+                                id="birthday"
+                                name="birthday"
+                                value="{{ old('birthday') }}"
+                                required
+                            >
+                            <span class="input-group-text bg-white border-left-0">
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
                         </div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Alamat Email (*)</label>
-                            <input type="email" class="form-control" id="email" name="email" maxlength="255" required>
-                            <div class="form-text text-muted">Pastikan email aktif untuk informasi selanjutnya.</div>
-                        </div>
-
-                        <div class="row mb-4">
-                            <div class="col-md-6 mb-3 mb-md-0">
-                                <label for="birthday" class="form-label">Tanggal Lahir (*)</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">
-                                        <svg class="icon icon-xs text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
-                                    </span>
-                                    <input class="form-control" id="birthday" name="birthday" type="date" required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Jenis Kelamin (*)</label>
-                                <div class="d-flex align-items-center h-100 pt-2">
-                                    <div class="form-check form-check-inline me-4">
-                                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" required>
-                                        <label class="form-check-label" for="genderMale">Laki-laki (Male)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline me-4">
-                                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female">
-                                        <label class="form-check-label" for="genderFemale">Perempuan (Female)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="genderOther" value="Other">
-                                        <label class="form-check-label" for="genderOther">Lainnya (Other)</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-success mt-3"><i class="fas fa-user-plus me-1"></i> Tambah Pelanggan</button>
-                        </div>
-                    </form>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            required
+                        >
+                    </div>
                 </div>
-            </div>
+
+                <div class="row mb-4">
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            id="phone"
+                            name="phone"
+                            value="{{ old('phone') }}"
+                        >
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" name="gender" required>
+                            <option value="" disabled {{ old('gender') == '' ? 'selected' : '' }}>-- Pilih --</option>
+                            <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+                            <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
+                            <option value="Other" {{ old('gender') == 'Other' ? 'selected' : '' }}>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <label for="last_name" class="form-label">Last name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="last_name"
+                            name="last_name"
+                            value="{{ old('last_name') }}"
+                        >
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-end">
+                         <div class="mt-4 mt-md-0">
+                            <button type="submit" class="btn btn-dark me-2 px-4 shadow-sm">Simpan</button>
+                            <a href="{{ url()->previous() }}" class="btn btn-outline-warning px-4">Batal</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>
 
-    <div class="mt-4">
-        <a href="#" class="btn btn-primary"><i class="far fa-question-circle me-1"></i> Kembali</a>
-    </div>
-</div>
-
-            <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
-    <div class="card-body bg-gray-800 text-white pt-4">
-        <button type="button" class="btn-close theme-settings-close" aria-label="Close" data-bs-toggle="collapse"
-            href="#theme-settings" role="button" aria-expanded="false" aria-controls="theme-settings"></button>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <p class="m-0 mb-1 me-4 fs-7">Open source <span role="img" aria-label="gratitude">💛</span></p>
-            <a class="github-button" href="https://github.com/themesberg/volt-bootstrap-5-dashboard"
-                data-color-scheme="no-preference: dark; light: light; dark: light;" data-icon="octicon-star"
-                data-size="large" data-show-count="true"
-                aria-label="Star themesberg/volt-bootstrap-5-dashboard on GitHub">Star</a>
+    <div class="theme-settings card bg-gray-800 pt-2 collapse" id="theme-settings">
         </div>
-        <a href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard" target="_blank"
-            class="btn btn-secondary d-inline-flex align-items-center justify-content-center mb-3 w-100">
-            Download
-            <svg class="icon icon-xs ms-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd"></path></svg>
-        </a>
-        <p class="fs-7 text-gray-300 text-center">Available in the following technologies:</p>
-        <div class="d-flex justify-content-center">
-            <a class="me-3" href="https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard"
-                target="_blank">
-                <img src="assets-admin/assets/img/technologies/bootstrap-5-logo.svg" class="image image-xs">
-            </a>
-            <a href="https://demo.themesberg.com/volt-react-dashboard/#/" target="_blank">
-                <img src="assets-admin/assets/img/technologies/react-logo.svg" class="image image-xs">
-            </a>
-        </div>
-    </div>
 </div>
 
 <div class="card theme-settings bg-gray-800 theme-settings-expand" id="theme-settings-expand">
