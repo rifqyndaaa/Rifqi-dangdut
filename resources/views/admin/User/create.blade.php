@@ -551,7 +551,7 @@
             </nav>
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
-                    <h1 class="h4">Tambah Pelanggan</h1>
+                    <h1 class="h4">Tambah user</h1>
                     <p class="mb-0">Form Untuk Menambah Pelanggan Baru</p>
                 </div>
                 <div>
@@ -570,7 +570,7 @@
 
 
                     <div class="card-header bg-primary text-white py-3">
-                        <h5 class="mb-0">Formulir Tambah Pelanggan Baru</h5>
+                        <h5 class="mb-0">Formulir Tambah user Baru</h5>
                     </div>
 
 
@@ -581,7 +581,7 @@
                             </div>
                         @endif
                         </div>
-                        <form action="{{ route('user.store') }}" method="POST">
+                        <form action="{{ route('pelanggan.store') }}" method="POST">
                             @csrf
 
 
@@ -593,7 +593,7 @@
 
 
                                     <div class="mb-4">
-                                        <label for="firstName" class="form-label">Nama Depan <span
+                                        <label for="nama" class="form-label">Nama  <span
                                                 class="text-danger">*</span></label>
                                         <input type="text"
                                             class="form-control @error('first_name') is-invalid @enderror"
@@ -604,34 +604,6 @@
                                         @enderror
                                     </div>
 
-
-                                    <div class="mb-4">
-                                        <label for="lastName" class="form-label">Nama Belakang</label>
-                                        <input type="text"
-                                            class="form-control @error('last_name') is-invalid @enderror"
-                                            id="lastName" name="last_name" placeholder="Masukkan Nama Belakang"
-                                            value="{{ old('last_name') }}">
-                                        @error('last_name')
-                                            <div class="invalid-feedback">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-
-
-                                    <div class="col-md-6 mb-3">
-                                    <label for="birthday" class="form-label">Birthday</label>
-                                    <input type="date" class="form-control @error('birthday') is-invalid @enderror"
-                                        id="birthday" name="birthday" value="{{ old('birthday') }}" required>
-                                    @error('birthday')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-
-
-                                </div>
-
-
-                                <div class="col-lg-6 border-start border-light ps-lg-4">
-                                    <h6 class="mb-3 text-dark">Data Kontak</h6>
 
 
                                     <div class="mb-4">
@@ -650,10 +622,10 @@
 
 
                                     <div class="mb-4">
-                                        <label for="phoneInput" class="form-label">Nomor Telepon</label>
+                                        <label for="pasword" class="form-label">paswword</label>
                                         <input type="tel"
                                             class="form-control @error('phone') is-invalid @enderror" id="phoneInput"
-                                            name="phone" placeholder="Cth: 0812XXXXXXXX"
+                                            name="phone" placeholder="masukan isi password
                                             value="{{ old('phone') }}">
                                         @error('phone')
                                             <div class="invalid-feedback">{{ $message }}</div>
@@ -661,37 +633,6 @@
                                     </div>
 
 
-                                    <div class="mb-4">
-                                        <label class="d-block form-label">Jenis Kelamin</label>
-                                        @php
-                                            $oldGender = old('gender');
-                                        @endphp
-
-
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender"
-                                                id="genderMale" value="Male"
-                                                @if ($oldGender == 'Male') checked @endif>
-                                            <label class="form-check-label" for="genderMale">Laki-laki</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender"
-                                                id="genderFemale" value="Female"
-                                                @if ($oldGender == 'Female') checked @endif>
-                                            <label class="form-check-label" for="genderFemale">Perempuan</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="gender"
-                                                id="genderOther" value="Other"
-                                                @if ($oldGender == 'Other') checked @endif>
-                                            <label class="form-check-label" for="genderOther">Lainnya</label>
-                                        </div>
-                                        @error('gender')
-                                            <div class="text-danger small mt-1">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
 
 
                             <hr class="my-4">
