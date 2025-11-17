@@ -1,16 +1,23 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 namespace App\Http\Controllers;
 
 use App\Models\Pelanggan;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Validation\Rule;
+=======
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 
 class PelangganController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+<<<<<<< HEAD
     public function index(Request $request)
     {
         $query = Pelanggan::query();
@@ -28,6 +35,14 @@ class PelangganController extends Controller
 
         $data['dataPelanggan'] = $query->paginate(10)->withQueryString();
         return view('admin.pelanggan.index', $data);
+=======
+    public function index()
+    {
+
+		$data['dataPelanggan'] = Pelanggan::all();
+		return view('admin.pelanggan.index',$data);
+
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**
@@ -43,6 +58,7 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
@@ -66,6 +82,20 @@ class PelangganController extends Controller
         Pelanggan::create($validated);
 
         return redirect()->route('pelanggan.index')->with('success', 'Penambahan Data Berhasil!');
+=======
+        //dd($request->all());
+        $data['first_name'] = $request->first_name;
+        $data['last_name']  = $request->last_name;
+        $data['birthday']   = $request->birthday;
+        $data['gender']     = $request->gender;
+        $data['email']      = $request->email;
+        $data['phone']      = $request->phone;
+
+        Pelanggan::create($data);
+
+        return redirect()->route('pelanggan.create')->with('success', 'Penambahan Data Berhasil!');
+
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**
@@ -73,8 +103,12 @@ class PelangganController extends Controller
      */
     public function show(string $id)
     {
+<<<<<<< HEAD
         $data['dataPelanggan'] = Pelanggan::findOrFail($id);
         return view('admin.pelanggan.show', $data);
+=======
+        //
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**
@@ -82,8 +116,12 @@ class PelangganController extends Controller
      */
     public function edit(string $id)
     {
+<<<<<<< HEAD
         $data['dataPelanggan'] = Pelanggan::findOrFail($id);
         return view('admin.pelanggan.edit', $data);
+=======
+        //
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**
@@ -91,6 +129,7 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
+<<<<<<< HEAD
         $pelanggan = Pelanggan::findOrFail($id);
 
         $validated = $request->validate([
@@ -120,6 +159,9 @@ class PelangganController extends Controller
         $pelanggan->update($validated);
 
         return redirect()->route('pelanggan.index')->with('success', 'Update Data Berhasil!');
+=======
+        //
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**
@@ -127,9 +169,13 @@ class PelangganController extends Controller
      */
     public function destroy(string $id)
     {
+<<<<<<< HEAD
         $pelanggan = Pelanggan::findOrFail($id);
         $pelanggan->delete();
 
         return redirect()->route('pelanggan.index')->with('success', 'Data berhasil dihapus!');
+=======
+        //
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 }

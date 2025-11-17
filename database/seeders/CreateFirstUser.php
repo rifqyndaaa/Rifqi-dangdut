@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -14,6 +18,7 @@ class CreateFirstUser extends Seeder
      */
     public function run(): void
     {
+<<<<<<< HEAD
        $data['name'] = 'rifqi';
         $data['email'] = 'Rifqi@gmail.com';
         $data['password'] = Hash::make('password123');
@@ -21,4 +26,15 @@ class CreateFirstUser extends Seeder
     }
 
 
+=======
+  User::create([
+    'name' => 'Gatot Kaca',
+    'email' => 'gatot@pcr.ac.id',
+    'password' => Hash::make('gatotkaca123')
+]);
+
+
+
+    }
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 }

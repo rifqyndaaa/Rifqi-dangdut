@@ -11,6 +11,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         /* Cara 1 */
         $data ['username']  = 'Rezy';
         $data ['last_login']  = date('Y-m-d H:i:s');
@@ -31,6 +32,12 @@ class HomeController extends Controller
 	// 	$list_pendidikan = ['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3'];
     // return view('home', compact('username', 'last_login', 'list_pendidikan'));
 
+=======
+        $data ['username']        = 'Hrifqi';
+    $data ['last_login']      = date('Y-m-d H:i:s');
+    $data ['list_pendidikan'] = ['SD','SMP','SMA','S1','S2','S3'];
+    return view('home', $data );
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**

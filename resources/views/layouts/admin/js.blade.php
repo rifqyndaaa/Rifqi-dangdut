@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Core -->
   <script src="{{ asset('assets-admin')}}/vendor/@popperjs/core/dist/umd/popper.min.js"></script>
   <script src="{{ asset('assets-admin')}}/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -38,3 +39,11 @@
 
   <!-- Volt JS -->
   <script src="{{ asset('assets-admin')}}/assets/js/volt.js"></script>
+=======
+<script src="{{ asset('assets-admin/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('assets-admin/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- Volt JS -->
+    <script src="{{ asset('assets-admin/js/volt.js') }}"></script>
+    {{-- end js --}}
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c

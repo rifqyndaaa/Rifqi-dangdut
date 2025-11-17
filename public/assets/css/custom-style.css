@@ -1,8 +1,17 @@
 @font-face {
+<<<<<<< HEAD
     font-family: 'Roboto';
     src: url('assets/fonts/Roboto.ttf');
 }
 
 .font-custom{
     font-family: 'Roboto';
+=======
+    font-family: 'OpenSans';
+    src: url('assets/fonts/OpenSans.ttf');
+}
+
+.font-custom{
+    font-family: 'OpenSans', sans-serif;
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 }

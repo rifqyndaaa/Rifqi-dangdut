@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -27,6 +30,7 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
         // dd($request->all());
 		$request->validate([
 		    'nama'  => 'required|max:20',
@@ -42,6 +46,23 @@ class QuestionController extends Controller
         $data['pertanyaan']  = $request->pertanyaan;
 
         return view('home-question-respon', $data);
+=======
+
+		$request->validate([
+		    'nama'  => 'required|max:10',
+		    'email' => ['required','email'],
+		    'pertanyaan' => 'required|max:300|min:8',
+		]);
+
+
+        //dd($request->all());
+        $data['nama']       = $request->nama;
+        $data['email']      = $request->email;
+        $data['pertanyaan'] = $request->pertanyaan;
+
+        return view('home-question-respon', $data);
+
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**

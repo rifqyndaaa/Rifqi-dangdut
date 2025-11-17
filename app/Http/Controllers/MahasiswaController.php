@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -41,7 +44,10 @@ class MahasiswaController extends Controller
             return view('halaman-mahasiswa-profil');
         }
 
+<<<<<<< HEAD
         // return $param1;
+=======
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     }
 
     /**

@@ -23,8 +23,13 @@
         }
 
         .hero-section {
+<<<<<<< HEAD
             background-color: #67b0d1;
             color: #C72B32;
+=======
+            background-color: #3187e9;
+            color: white;
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
             padding: 50px 0;
             text-align: center;
         }
@@ -35,12 +40,17 @@
 
         .card {
             margin-top: 30px;
+<<<<<<< HEAD
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+=======
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.1);
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
         }
 
         .footer {
             margin-top: 50px;
             padding: 20px 0;
+<<<<<<< HEAD
             background-color: #1be400;
             text-align: center;
         }
@@ -49,6 +59,16 @@
             margin: 0;
             font-size: 0.9rem;
             color: #000000;
+=======
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #6c757d;
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
         }
     </style>
 </head>
@@ -57,9 +77,16 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
+<<<<<<< HEAD
             <img src="{{ asset('assets/images/Logo.png') }}" alt="Logo" class="me-2" style="height: 40px; width: auto;">
             <a class="navbar-brand font-custom" href="#">My Laravel App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+=======
+            <img src="{{ asset('assets/images/logo-app.png') }}" alt="Logo">
+            <a class="navbar-brand font-custom" href="#">My Laravel App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -84,6 +111,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
+<<<<<<< HEAD
               <img src="{{ asset('/assets/images/Logo.png') }}" alt="Logo" width="100" class="mb-3">
            <!--before -->
                 <h1>Welcome Admin</h1>
@@ -91,6 +119,11 @@
             <!--after-->
                 <h1> {{ $username }} </h1>
                 <p> {{ $last_login }} </p>
+=======
+            <h1> {{ $username }} </h1>
+            <p> {{ $last_login }} </p>
+            <p class="lead mb-0">A simple and elegant app using Bootstrap 5 and Laravel Blade.</p>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
         </div>
     </section>
 
@@ -101,9 +134,16 @@
                 {{-- About --}}
                 <div class="card mb-4">
                     <div class="card-body">
+<<<<<<< HEAD
                         <img src="{{ asset('/assets/images/logo.png') }}" alt="Logo" width="150" class="mb-2">
                         <h5 class="card-title">About Our Application</h5>
                         <p class="card-text">Our application provides a clean and intuitive interface, allowing users to navigate easily and perform tasks efficiently. Built with Laravel and Bootstrap, it offers flexibility and responsiveness.</p>
+=======
+                        <h5 class="card-title">About Our Application</h5>
+                        <p class="card-text">Our application provides a clean and intuitive interface, allowing users to
+                            navigate easily and perform tasks efficiently. Built with Laravel and Bootstrap, it offers
+                            flexibility and responsiveness.</p>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                         <a href="#" class="btn btn-primary">Explore More</a>
                     </div>
                 </div>
@@ -112,11 +152,21 @@
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
+<<<<<<< HEAD
                             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                 About Us
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+=======
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne">
+                                About Us
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                             <div class="accordion-body">
                                 We are a tech company that specializes in web development solutions.
                             </div>
@@ -124,7 +174,12 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
+<<<<<<< HEAD
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+=======
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                                 Our Services
                             </button>
                         </h2>
@@ -161,6 +216,7 @@
             </div>
 
             <div class="col-md-6">
+<<<<<<< HEAD
                         <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Form Pertanyaan</h5>
@@ -257,13 +313,123 @@
                 </div>
             </div>
         </div>
+=======
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Form Pertanyaan</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Form Pertanyaan</h5>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <form action="{{ route('question.store') }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="nama" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" name="nama">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" class="form-control" name="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pertanyaan" class="form-label">Pertanyaan</label>
+                                    <textarea class="form-control" rows="4" name="pertanyaan" ...></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    {{-- Alerts --}}
+                    <div class="card ">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3">Alerts</h3>
+                            <div class="alert alert-primary mb-2">Informational alert</div>
+                            <div class="alert alert-success mb-2">Success alert</div>
+                            <div class="alert alert-warning mb-2">Warning alert</div>
+                            <div class="alert alert-danger mb-0">Danger alert</div>
+                        </div>
+                    </div>
+
+                    {{-- Buttons --}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3">Buttons</h3>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-primary">Primary</button>
+                                <button class="btn btn-secondary">Secondary</button>
+                                <button class="btn btn-outline-primary">Outline</button>
+                                <button class="btn btn-success">Success</button>
+                                <button class="btn btn-danger">Danger</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Table --}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3">Table</h3>
+                            <div class="table-responsive">
+                                <table class="table align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Ani</td>
+                                            <td>Admin</td>
+                                            <td><span class="badge text-bg-success">Active</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Budi</td>
+                                            <td>User</td>
+                                            <td><span class="badge text-bg-secondary">Inactive</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Cici</td>
+                                            <td>Editor</td>
+                                            <td><span class="badge text-bg-warning">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau
+                                <code>.table-bordered</code> sesuai kebutuhan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+<<<<<<< HEAD
             <p>&copy; {{date('Y')}} My Laravel App. All Rights Reserved.</p>
             <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" width="80">
+=======
+            <p>&copy; {{ date('Y') }} My Laravel App. All Rights Reserved.</p>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
         </div>
     </footer>
 

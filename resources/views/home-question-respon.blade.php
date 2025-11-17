@@ -52,12 +52,20 @@
 <body>
 
     <div class="thankyou-container">
+<<<<<<< HEAD
         <h2>Terima Kasih, {{ $nama }}🎉}}</h2>
+=======
+        <h2>Terima Kasih, {{ $nama }} 🎉</h2>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
         <p class="lead">Pertanyaan Anda telah berhasil dikirim.</p>
 
         <blockquote>
             <strong>Pertanyaan Anda:</strong><br>
+<<<<<<< HEAD
             {{ $pertanyaan }}
+=======
+           {{ $pertanyaan }}"
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
         </blockquote>
 
         <p class="email-info mt-4">

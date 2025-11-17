@@ -36,7 +36,11 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Volt CSS -->
+<<<<<<< HEAD
     <link type="text/css" href="{{ asset('asset-admin/css/volt.css') }}" rel="stylesheet">
+=======
+    <link type="text/css" href="{{ asset('assets-admin/css/volt.css') }}" rel="stylesheet">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 
 </head>
 
@@ -111,7 +115,11 @@
                         <span class="sidebar-text">Dashboard</span>
                     </a>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item">
+=======
+                {{--  <li class="nav-item">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                     <a href="https://demo.themesberg.com/volt-pro/pages/kanban.html" target="_blank"
                         class="nav-link d-flex justify-content-between">
                         <span>
@@ -129,8 +137,13 @@
                             <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
                         </span>
                     </a>
+<<<<<<< HEAD
                 </li>
                 <li class="nav-item ">
+=======
+                </li>  --}}
+                {{--  <li class="nav-item ">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                     <a href="../../pages/transactions.html" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -143,8 +156,13 @@
                         </span>
                         <span class="sidebar-text">Transactions</span>
                     </a>
+<<<<<<< HEAD
                 </li>
                 <li class="nav-item ">
+=======
+                </li>  --}}
+                {{--  <li class="nav-item ">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                     <a href="../../pages/settings.html" class="nav-link">
                         <span class="sidebar-icon">
                             <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
@@ -156,8 +174,13 @@
                         </span>
                         <span class="sidebar-text">Settings</span>
                     </a>
+<<<<<<< HEAD
                 </li>
                 <li class="nav-item">
+=======
+                </li>  --}}
+                {{--  <li class="nav-item">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                     <a href="https://demo.themesberg.com/volt-pro/pages/calendar.html" target="_blank"
                         class="nav-link d-flex justify-content-between">
                         <span>
@@ -175,8 +198,13 @@
                             <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
                         </span>
                     </a>
+<<<<<<< HEAD
                 </li>
                 <li class="nav-item">
+=======
+                </li>  --}}
+                {{--  <li class="nav-item">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                     <a href="https://demo.themesberg.com/volt-pro/pages/map.html" target="_blank"
                         class="nav-link d-flex justify-content-between">
                         <span>
@@ -194,7 +222,11 @@
                             <span class="badge badge-sm bg-secondary ms-1 text-gray-800">Pro</span>
                         </span>
                     </a>
+<<<<<<< HEAD
                 </li>
+=======
+                </li>  --}}
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                 <li class="nav-item">
                     <span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
                         data-bs-toggle="collapse" data-bs-target="#submenu-app">
@@ -228,7 +260,11 @@
                         </ul>
                     </div>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item">
+=======
+                {{--  <li class="nav-item">
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                     <span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
                         data-bs-toggle="collapse" data-bs-target="#submenu-pages">
                         <span>
@@ -288,10 +324,17 @@
                                 <a class="nav-link" href="../../pages/examples/500.html">
                                     <span class="sidebar-text">500 Not Found</span>
                                 </a>
+<<<<<<< HEAD
                             </li>
                         </ul>
                     </div>
                 </li>
+=======
+                            </li>  --}}
+                        </ul>
+                    </div>
+                {{--  </li>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                 <li class="nav-item">
                     <span class="nav-link  collapsed  d-flex justify-content-between align-items-center"
                         data-bs-toggle="collapse" data-bs-target="#submenu-components">
@@ -351,7 +394,11 @@
                             </li>
                         </ul>
                     </div>
+<<<<<<< HEAD
                 </li>
+=======
+                </li>  --}}
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                 <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
                 <li class="nav-item">
                     <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/"
@@ -367,7 +414,11 @@
                         <span class="sidebar-text">Documentation <span
                                 class="badge badge-sm bg-secondary ms-1 text-gray-800">v1.4</span></span>
                     </a>
+<<<<<<< HEAD
                 </li>
+=======
+                {{--  </li>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                 <li class="nav-item">
                     <a href="https://themesberg.com" target="_blank" class="nav-link d-flex align-items-center">
                         <span class="sidebar-icon">
@@ -376,7 +427,11 @@
                         </span>
                         <span class="sidebar-text">Themesberg</span>
                     </a>
+<<<<<<< HEAD
                 </li>
+=======
+                </li>  --}}
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
                 <li class="nav-item">
                     <a href="../../pages/upgrade-to-pro.html"
                         class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
@@ -1213,11 +1268,19 @@
     </main>
 
     <!-- Core -->
+<<<<<<< HEAD
     <script src="{{ asset('assets-admin/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('assets-admin/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
     <!-- Vendor JS -->
     <script src="{{ asset('assets-admin/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
+=======
+    <script src="../../vendor/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Vendor JS -->
+    <script src="../../vendor/onscreen/dist/on-screen.umd.min.js"></script>
+>>>>>>> be6cabad91de1508e88db3ee31484b03523d920c
 </body>
 
 </html>
