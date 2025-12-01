@@ -63,10 +63,10 @@
                                 <tr>
                                     <td>
                                         @if ($item->profile_picture)
-                                            <img src="{{ asset('storage/' . $item->profile_picture) }}" 
-                                                 alt="Profile Picture" 
-                                                 class="rounded-circle" 
-                                                 width="40" 
+                                            <img src="{{ asset('storage/' . $item->profile_picture) }}"
+                                                 alt="Profile Picture"
+                                                 class="rounded-circle"
+                                                 width="40"
                                                  height="40"
                                                  style="object-fit: cover;">
                                         @else

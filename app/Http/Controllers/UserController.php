@@ -12,14 +12,14 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $query = User::query();
-        // FILTER GENDER
-        if ($request->gender) {
-            $query->where('gender', $request->gender);
-        }
-        // Search
+
+        // SEARCH
         if ($request->search) {
-            $query->where('name', 'like', '%' . $request->search . '%')
-                ->orWhere('email', 'like', '%' . $request->search . '%');
+            $keyword = $request->search;
+            $query->where(function ($q) use ($keyword) {
+                $q->where('name', 'like', "%$keyword%")
+                  ->orWhere('email', 'like', "%$keyword%");
+            });
         }
 
         $data['dataUser'] = $query->paginate(10)->withQueryString();
@@ -35,25 +35,29 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => 'required',
-            'last_name'  => 'required',
-            'email'      => 'required|email|unique:users,email',
-            'password'   => 'required|min:6',
-            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'first_name'       => 'required',
+            'last_name'        => 'required',
+            'email'            => 'required|email|unique:users,email',
+            'password'         => 'required|min:6',
+            'role'             => 'required|in:admin,pegawai,pelanggan,mitra',
+            'status'           => 'required|in:active,inactive',
+            'profile_picture'  => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
+        // Upload foto
         $profilePicturePath = null;
         if ($request->hasFile('profile_picture')) {
-            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $profilePicturePath = $request->file('profile_picture')
+                ->store('profile_pictures', 'public');
         }
 
         User::create([
-            'name'     => $request->first_name . ' ' . $request->last_name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password),
-            'role'     => $request->role ?? 'pegawai',
-            'status'   => $request->status ?? 'active',
-            'profile_picture' => $profilePicturePath,
+            'name'             => $request->first_name . ' ' . $request->last_name,
+            'email'            => $request->email,
+            'password'         => Hash::make($request->password),
+            'role'             => $request->role,
+            'status'           => $request->status,
+            'profile_picture'  => $profilePicturePath,
         ]);
 
         return redirect()->route('user.index')->with('success', 'User berhasil dibuat!');
@@ -69,53 +73,51 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        // Validasi
         $request->validate([
-            'name'  => 'required',
-            'email' => 'required|email|unique:users,email,' . $user->id,
-            'role'  => 'required|in:admin,pegawai',
-            'status' => 'required|in:active,inactive',
-            'password' => 'nullable|min:6|confirmed',
+            'name'            => 'required',
+            'email'           => 'required|email|unique:users,email,' . $user->id,
+            'role'            => 'required|in:admin,pegawai,pelanggan,mitra',
+            'status'          => 'required|in:active,inactive',
+            'password'        => 'nullable|min:6|confirmed',
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        // Update data
-        $user->name  = $request->name;
-        $user->email = $request->email;
-        $user->role  = $request->role;
+        $user->name   = $request->name;
+        $user->email  = $request->email;
+        $user->role   = $request->role;
         $user->status = $request->status;
 
-        // Update profile picture jika ada
+        // Foto baru?
         if ($request->hasFile('profile_picture')) {
-            // Hapus gambar lama jika ada
             if ($user->profile_picture) {
                 Storage::delete('public/' . $user->profile_picture);
             }
-            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
-            $user->profile_picture = $profilePicturePath;
+            $user->profile_picture = $request->file('profile_picture')
+                ->store('profile_pictures', 'public');
         }
 
-        // Update password jika diisi
+        // Password baru?
         if ($request->password) {
             $user->password = Hash::make($request->password);
         }
 
         $user->save();
 
-        return redirect()->route('user.index')->with('success', 'User berhasil diupdate!');
+        return redirect()->route('user.index')
+            ->with('success', 'User berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
         $user = User::findOrFail($id);
 
-        // Hapus profile picture jika ada
         if ($user->profile_picture) {
             Storage::delete('public/' . $user->profile_picture);
         }
 
         $user->delete();
 
-        return redirect()->route('user.index')->with('success', 'User berhasil dihapus!');
+        return redirect()->route('user.index')
+            ->with('success', 'User berhasil dihapus!');
     }
 }
